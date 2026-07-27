@@ -16,139 +16,157 @@
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--white); color: var(--navy); overflow-x: hidden; }
 
     /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,31,60,0.97); backdrop-filter: blur(8px); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; border-bottom: 1px solid rgba(200,149,42,0.2); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,31,60,0.97); backdrop-filter: blur(8px); padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; height: 68px; border-bottom: 1px solid rgba(200,149,42,0.2); }
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .nav-logo img { height: 38px; width: 38px; object-fit: contain; }
     .nav-logo span { font-size: 0.95rem; color: var(--white); font-weight: 700; letter-spacing: 0.02em; }
-    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.03em; transition: color 0.2s; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; transition: color 0.2s; text-transform: uppercase; }
     .nav-links a:hover { color: var(--gold2); }
-    @media(max-width:768px){ .nav-links { display: none; } }
+    .nav-cta { background: var(--gold); color: var(--navy); padding: 8px 18px; border-radius: 7px; text-decoration: none; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--gold2); }
+    @media(max-width:900px){ .nav-links { display: none; } nav { padding: 0 1.5rem; } }
 
     /* HERO */
-    .hero { min-height: 100vh; background: linear-gradient(135deg, #0D1F3C 0%, #162B50 50%, #0D2A45 100%); display: flex; align-items: center; justify-content: center; text-align: center; padding: 80px 2rem 4rem; position: relative; overflow: hidden; }
+    .hero { min-height: 100vh; background: linear-gradient(135deg, #0D1F3C 0%, #162B50 50%, #0D2A45 100%); display: flex; align-items: center; justify-content: center; text-align: center; padding: 100px 2rem 4rem; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 60%, rgba(200,149,42,0.1) 0%, transparent 70%); }
-    .hero > div { position: relative; z-index: 1; }
-    .hero-logo { width: clamp(80px,12vw,120px); margin-bottom: 1.5rem; }
+    .hero > div { position: relative; z-index: 1; max-width: 780px; }
+    .hero-logo { width: clamp(84px,10vw,120px); margin-bottom: 1.5rem; }
     .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(200,149,42,0.15); border: 1px solid rgba(200,149,42,0.4); color: var(--gold2); padding: 6px 16px; border-radius: 100px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; }
-    .hero h1 { font-size: clamp(2.5rem,7vw,4.5rem); color: var(--white); line-height: 1.1; margin-bottom: 1.25rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; }
+    .hero h1 { font-size: clamp(2.6rem,6vw,4.6rem); color: var(--white); line-height: 1.1; margin-bottom: 1.25rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; }
     .hero h1 span { color: var(--gold2); }
-    .hero p { font-size: clamp(0.95rem,2vw,1.1rem); color: rgba(255,255,255,0.65); max-width: 520px; margin: 0 auto 1.5rem; line-height: 1.75; }
+    .hero p { font-size: clamp(0.95rem,1.4vw,1.1rem); color: rgba(255,255,255,0.65); max-width: 560px; margin: 0 auto 1.5rem; line-height: 1.75; }
     .wida-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); padding: 7px 16px; border-radius: 8px; font-size: 0.72rem; margin-bottom: 2rem; letter-spacing: 0.04em; }
     .wida-tag strong { color: rgba(255,255,255,0.85); }
-    .btn-gold { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy); padding: 13px 30px; border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.06em; transition: background 0.2s, transform 0.2s; }
+    .btn-gold { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy); padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.06em; transition: background 0.2s, transform 0.2s; }
     .btn-gold:hover { background: var(--gold2); transform: translateY(-2px); }
-    .hero-slogan { font-size: 0.72rem; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; margin-top: 1.25rem; font-weight: 600; }
+    .hero-slogan { font-size: 0.74rem; letter-spacing: 0.14em; color: var(--gold); text-transform: uppercase; margin-top: 1.25rem; font-weight: 700; }
 
     /* SHARED */
-    section { padding: 6rem 2rem; }
+    section { padding: 7rem 2rem; }
     .section-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
-    .section-title { font-size: clamp(1.8rem,4vw,2.6rem); color: var(--navy); line-height: 1.15; margin-bottom: 1rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; }
-    .section-sub { color: var(--gray); font-size: 0.975rem; line-height: 1.8; max-width: 560px; }
+    .section-title { font-size: clamp(1.9rem,3.4vw,2.7rem); color: var(--navy); line-height: 1.15; margin-bottom: 1rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; }
+    .section-sub { color: var(--gray); font-size: 0.98rem; line-height: 1.8; max-width: 580px; }
 
     /* ABOUT */
     .about { background: var(--cream); }
-    .about-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    @media(max-width:768px){ .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .about-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 5.5rem; align-items: center; }
+    @media(max-width:860px){ .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
     .values { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
     .val { display: flex; gap: 1rem; align-items: flex-start; }
-    .val-icon { width: 38px; height: 38px; border-radius: 10px; background: var(--navy); color: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
-    .val h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.2rem; text-transform: uppercase; letter-spacing: 0.04em; }
-    .val p { font-size: 0.85rem; color: var(--gray); line-height: 1.65; }
+    .val-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--navy); color: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1.05rem; flex-shrink: 0; }
+    .val h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.2rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .val p { font-size: 0.87rem; color: var(--gray); line-height: 1.65; }
     .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-    .stat { background: var(--white); border-radius: 16px; padding: 1.5rem; text-align: center; box-shadow: 0 2px 12px rgba(13,31,60,0.06); border: 1px solid rgba(13,31,60,0.06); }
-    .stat-n { font-size: 2.2rem; font-weight: 900; color: var(--navy); line-height: 1; }
+    .stat { background: var(--white); border-radius: 16px; padding: 1.75rem 1.5rem; text-align: center; box-shadow: 0 2px 12px rgba(13,31,60,0.06); border: 1px solid rgba(13,31,60,0.06); }
+    .stat-n { font-size: 2.3rem; font-weight: 900; color: var(--navy); line-height: 1; }
     .stat-n span { color: var(--gold); }
-    .stat-l { font-size: 0.75rem; color: var(--gray); margin-top: 0.4rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+    .stat-l { font-size: 0.76rem; color: var(--gray); margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
 
     /* MISSION */
     .mission { background: var(--white); }
-    .mission-inner { max-width: 1100px; margin: 0 auto; }
-    .mission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .mission-inner { max-width: 1180px; margin: 0 auto; }
+    .mission-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    @media(max-width:960px){ .mission-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width:560px){ .mission-grid { grid-template-columns: 1fr; } }
     .mission-card { background: var(--cream); border-radius: 16px; padding: 2rem 1.5rem; border: 1px solid rgba(13,31,60,0.06); }
     .mission-card .icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
     .mission-card h3 { font-size: 0.9rem; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
-    .mission-card p { font-size: 0.86rem; color: var(--gray); line-height: 1.7; }
+    .mission-card p { font-size: 0.87rem; color: var(--gray); line-height: 1.7; }
 
     /* CURRICULUM */
     .curriculum { background: var(--navy); }
     .curriculum .section-title { color: var(--white); }
     .curriculum .section-sub { color: rgba(255,255,255,0.55); }
-    .curr-inner { max-width: 1100px; margin: 0 auto; }
-    .curr-units { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px,1fr)); gap: 1rem; margin-top: 3rem; }
-    .curr-unit { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 1.25rem 1.5rem; transition: background 0.2s; }
-    .curr-unit:hover { background: rgba(255,255,255,0.08); }
+    .curr-inner { max-width: 1180px; margin: 0 auto; }
+    .curr-units { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 3rem; }
+    @media(max-width:1080px){ .curr-units { grid-template-columns: repeat(3,1fr); } }
+    @media(max-width:700px){ .curr-units { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width:460px){ .curr-units { grid-template-columns: 1fr; } }
+    .curr-unit { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 1.25rem 1.5rem; transition: background 0.2s, transform 0.2s; }
+    .curr-unit:hover { background: rgba(255,255,255,0.08); transform: translateY(-3px); }
     .curr-month { font-size: 0.68rem; color: var(--gold); font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
     .curr-title { font-size: 0.9rem; font-weight: 800; color: var(--white); margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.02em; }
     .curr-sub { font-size: 0.78rem; color: rgba(255,255,255,0.45); }
 
     /* OFFICERS */
     .officers { background: var(--cream); }
-    .officers-grid { max-width: 1200px; margin: 3rem auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.5rem; }
+    .officers-inner { max-width: 1260px; margin: 0 auto; }
+    .officers-grid { margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    @media(max-width:1080px){ .officers-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width:640px){ .officers-grid { grid-template-columns: 1fr; } }
     .officer-card { border-radius: 20px; overflow: hidden; position: relative; background: var(--navy); border: 1px solid rgba(255,255,255,0.06); transition: transform 0.3s, box-shadow 0.3s; }
     .officer-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(13,31,60,0.25); }
-    .flag-bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.2; filter: blur(2px); }
-    .officer-inner { position: relative; z-index: 1; padding: 1.75rem; }
+    .flag-bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.22; filter: blur(2px); }
+    .officer-inner { position: relative; z-index: 1; padding: 1.75rem; background: linear-gradient(180deg, rgba(13,31,60,0.55) 0%, rgba(13,31,60,0.85) 100%); }
     .officer-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
     .officer-photo { width: 72px; height: 72px; border-radius: 50%; border: 2.5px solid var(--gold); overflow: hidden; flex-shrink: 0; }
     .officer-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
     .officer-flag { font-size: 1.4rem; }
     .officer-name { font-size: 1rem; color: var(--white); font-weight: 800; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.02em; }
-    .officer-native { font-size: 0.78rem; color: var(--gold); margin-top: 0.15rem; }
-    .officer-role { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.38); margin-top: 0.2rem; }
-    .officer-divider { height: 1px; background: rgba(255,255,255,0.09); margin: 1rem 0; }
-    .officer-origin { font-size: 0.76rem; color: rgba(255,255,255,0.4); margin-bottom: 0.75rem; }
-    .officer-story { font-size: 0.845rem; color: rgba(255,255,255,0.72); line-height: 1.7; }
+    .officer-role { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold2); margin-top: 0.3rem; }
+    .officer-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 1rem 0; }
+    .officer-origin { font-size: 0.76rem; color: rgba(255,255,255,0.45); margin-bottom: 0.75rem; }
+    .officer-story { font-size: 0.86rem; color: rgba(255,255,255,0.78); line-height: 1.7; }
 
     /* STORIES */
     .stories { background: var(--white); }
-    .stories-list { max-width: 900px; margin: 3rem auto 0; display: flex; flex-direction: column; gap: 1.5rem; }
-    .story-card { display: grid; grid-template-columns: 130px 1fr; gap: 2rem; align-items: start; padding: 2rem; border-radius: 16px; border: 1px solid var(--gray2); position: relative; overflow: hidden; }
-    @media(max-width:600px){ .story-card { grid-template-columns: 1fr; } }
-    .story-flag-bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.05; filter: blur(6px); z-index: 0; }
+    .stories-inner { max-width: 960px; margin: 0 auto; }
+    .stories-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
+    .story-card { display: grid; grid-template-columns: 150px 1fr; gap: 2.25rem; align-items: start; padding: 2.25rem; border-radius: 16px; border: 1px solid var(--gray2); position: relative; overflow: hidden; }
+    @media(max-width:640px){ .story-card { grid-template-columns: 1fr; } }
+    @keyframes flagWave {
+      0%   { transform: scale(1.08) rotate(0deg) skewY(0deg); }
+      25%  { transform: scale(1.11) rotate(0.4deg) skewY(0.6deg); }
+      50%  { transform: scale(1.08) rotate(-0.3deg) skewY(-0.5deg); }
+      75%  { transform: scale(1.1) rotate(0.2deg) skewY(0.4deg); }
+      100% { transform: scale(1.08) rotate(0deg) skewY(0deg); }
+    }
+    .story-flag-bg { position: absolute; inset: -10%; background-size: cover; background-position: center; opacity: 0.1; filter: blur(4px); z-index: 0; animation: flagWave 7s ease-in-out infinite; transform-origin: center; }
     .story-card > * { position: relative; z-index: 1; }
-    .story-photo { width: 130px; height: 130px; border-radius: 14px; overflow: hidden; border: 2px solid var(--gold); flex-shrink: 0; }
+    .story-photo { width: 150px; height: 150px; border-radius: 14px; overflow: hidden; border: 2px solid var(--gold); flex-shrink: 0; }
     .story-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-    .story-origin { font-size: 0.78rem; color: var(--gray); margin-bottom: 0.5rem; }
-    .story-name { font-size: 1.1rem; font-weight: 900; color: var(--navy); margin-bottom: 0.2rem; text-transform: uppercase; letter-spacing: 0.02em; }
+    .story-origin { font-size: 0.8rem; color: var(--gray); margin-bottom: 0.5rem; font-weight: 600; }
+    .story-name { font-size: 1.15rem; font-weight: 900; color: var(--navy); margin-bottom: 0.2rem; text-transform: uppercase; letter-spacing: 0.02em; }
     .story-role { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-    .story-text p { font-size: 0.875rem; color: var(--gray); line-height: 1.8; margin-bottom: 0.85rem; }
+    .story-text p { font-size: 0.885rem; color: var(--gray); line-height: 1.8; margin-bottom: 0.85rem; }
     .story-text p:last-child { margin-bottom: 0; }
 
     /* CONSTITUTION */
     .constitution { background: var(--navy); }
     .constitution .section-title { color: var(--white); }
     .constitution .section-sub { color: rgba(255,255,255,0.55); }
-    .const-inner { max-width: 900px; margin: 0 auto; }
+    .const-inner { max-width: 920px; margin: 0 auto; }
     .const-articles { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 2rem 0; }
     .const-art-link { background: rgba(200,149,42,0.15); border: 1px solid rgba(200,149,42,0.3); color: var(--gold2); padding: 5px 14px; border-radius: 100px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
     .const-art-link:hover { background: rgba(200,149,42,0.3); }
-    .const-article { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .const-article { margin-bottom: 2.75rem; padding-bottom: 2.75rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
     .const-article:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
     .const-art-num { font-size: 0.68rem; color: var(--gold); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4rem; }
-    .const-art-title { font-size: 1.2rem; color: var(--white); font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 1.25rem; }
+    .const-art-title { font-size: 1.25rem; color: var(--white); font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 1.25rem; }
     .const-section { margin-bottom: 1.25rem; }
     .const-section-title { font-size: 0.75rem; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
-    .const-section p { font-size: 0.875rem; color: rgba(255,255,255,0.65); line-height: 1.75; margin-bottom: 0.4rem; }
+    .const-section p { font-size: 0.885rem; color: rgba(255,255,255,0.68); line-height: 1.8; margin-bottom: 0.5rem; }
     .const-section ul { list-style: none; padding: 0; }
-    .const-section ul li { font-size: 0.875rem; color: rgba(255,255,255,0.65); line-height: 1.75; padding-left: 1rem; position: relative; margin-bottom: 0.3rem; }
-    .const-section ul li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); font-size: 0.7rem; top: 0.15rem; }
+    .const-section ul li { font-size: 0.885rem; color: rgba(255,255,255,0.68); line-height: 1.8; padding-left: 1.1rem; position: relative; margin-bottom: 0.4rem; }
+    .const-section ul li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); font-size: 0.7rem; top: 0.2rem; }
+    .const-sig { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: 1.5rem; font-style: italic; }
 
     /* JOIN */
     .join { background: var(--cream); }
-    .join-inner { max-width: 860px; margin: 0 auto; background: var(--navy); border-radius: 24px; padding: 4rem; text-align: center; position: relative; overflow: hidden; }
+    .join-inner { max-width: 900px; margin: 0 auto; background: var(--navy); border-radius: 24px; padding: 4.5rem; text-align: center; position: relative; overflow: hidden; }
     .join-inner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 100%, rgba(200,149,42,0.12) 0%, transparent 65%); }
     .join-inner > * { position: relative; z-index: 1; }
     .join-inner .section-title { color: var(--white); margin-bottom: 0.75rem; }
-    .join-inner p { color: rgba(255,255,255,0.6); max-width: 460px; margin: 0 auto 2rem; line-height: 1.75; }
-    .join-details { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .join-inner p.section-sub { color: rgba(255,255,255,0.6); max-width: 480px; margin: 0 auto 2rem; line-height: 1.75; }
+    .join-details { display: flex; justify-content: center; gap: 2.75rem; flex-wrap: wrap; margin-bottom: 2.25rem; }
     .jd-icon { font-size: 1.3rem; margin-bottom: 0.3rem; }
     .jd-label { font-size: 0.65rem; color: rgba(255,255,255,0.32); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
     .jd-val { font-size: 0.88rem; color: var(--white); font-weight: 700; margin-top: 0.15rem; text-transform: uppercase; letter-spacing: 0.04em; }
-    .join-socials { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.75rem; font-size: 0.82rem; }
+    .join-socials { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; font-size: 0.82rem; }
     .join-socials a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
     .join-socials a:hover { color: var(--gold2); }
-    @media(max-width:600px){ .join-inner { padding: 2.5rem 1.5rem; } .join-details { gap: 1.5rem; } }
+    @media(max-width:640px){ .join-inner { padding: 2.75rem 1.5rem; } .join-details { gap: 1.5rem; } }
 
     /* FOOTER */
     footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); padding: 1.75rem 2rem; text-align: center; font-size: 0.76rem; color: rgba(255,255,255,0.28); }
@@ -171,8 +189,8 @@
     <li><a href="#officers">Officers</a></li>
     <li><a href="#stories">Stories</a></li>
     <li><a href="#constitution">Constitution</a></li>
-    <li><a href="#join">Join Us</a></li>
   </ul>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdvx0290iJLUBmpC9aQbakHMnlkt75RucSmB8_toJ352017QQ/viewform?usp=header" target="_blank" class="nav-cta">Join Us</a>
 </nav>
 
 <!-- HERO -->
@@ -184,7 +202,7 @@
     <p>The ESOL Scholar Society empowers multilingual students to build academic confidence, find community, and claim their place — starting with the power of speaking.</p>
     <div class="wida-tag">&#10022; <strong>Recognized by WIDA</strong> &nbsp;&middot;&nbsp; University of Wisconsin&ndash;Madison &middot; 2026 Conference Speaker</div>
     <br />
-    <a href="#join" class="btn-gold">Join Our Community &rarr;</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdvx0290iJLUBmpC9aQbakHMnlkt75RucSmB8_toJ352017QQ/viewform?usp=header" target="_blank" class="btn-gold">Join Our Community &rarr;</a>
     <p class="hero-slogan">Together, We Speak Success</p>
   </div>
 </section>
@@ -195,7 +213,7 @@
     <div>
       <p class="section-label">Who We Are</p>
       <h2 class="section-title">Built by a multilingual student,<br />for multilingual students.</h2>
-      <p class="section-sub">Founded in August 2025 by Daniel Lee (이상윤), the ESOL Scholar Society was born from personal experience — the challenge of navigating two languages, two cultures, and two worlds at once. We exist to make that journey easier for every student who comes after.</p>
+      <p class="section-sub">Founded in August 2025 by Daniel Lee, the ESOL Scholar Society was born from personal experience — the challenge of navigating two languages, two cultures, and two worlds at once. We exist to make that journey easier for every student who comes after.</p>
       <div class="values">
         <div class="val"><div class="val-icon">&#128483;</div><div><h4>Speaking First</h4><p>Confidence in verbal communication is the foundation of everything we do. Speaking is how you claim your place in any room.</p></div></div>
         <div class="val"><div class="val-icon">&#127757;</div><div><h4>Inclusion</h4><p>Every student's culture and language background is a strength. We celebrate what makes each of us different.</p></div></div>
@@ -203,7 +221,7 @@
       </div>
     </div>
     <div class="stats">
-      <div class="stat"><div class="stat-n">10<span>+</span></div><div class="stat-l">Countries Represented</div></div>
+      <div class="stat"><div class="stat-n">5</div><div class="stat-l">Countries Represented</div></div>
       <div class="stat"><div class="stat-n"><span>&#9733;</span>WIDA</div><div class="stat-l">Nationally Recognized</div></div>
       <div class="stat"><div class="stat-n">2025</div><div class="stat-l">Year Founded</div></div>
       <div class="stat"><div class="stat-n">8</div><div class="stat-l">Curriculum Units</div></div>
@@ -249,7 +267,7 @@
 
 <!-- OFFICERS -->
 <section class="officers" id="officers">
-  <div style="max-width:1200px;margin:0 auto;">
+  <div class="officers-inner">
     <p class="section-label">Leadership</p>
     <h2 class="section-title">Meet Our Officers</h2>
     <p class="section-sub">All officers are former ESOL students — each one living proof that language is never a barrier, only a bridge.</p>
@@ -262,8 +280,7 @@
             <div class="officer-photo"><img src="DANIEL PIC 2.jpg" alt="Daniel Lee" /></div>
             <div>
               <div class="officer-flag">&#127472;&#127479;</div>
-              <div class="officer-name">Daniel Lee <span style="font-size:0.82rem;font-weight:400;text-transform:none;">(이상윤)</span></div>
-              <div class="officer-native">이상윤</div>
+              <div class="officer-name">Daniel Lee</div>
               <div class="officer-role">President &amp; Founder</div>
             </div>
           </div>
@@ -314,8 +331,7 @@
             <div class="officer-photo"><img src="BRANDON PIC 2.jpg" alt="Brandon Pham" /></div>
             <div>
               <div class="officer-flag">&#127483;&#127475;</div>
-              <div class="officer-name">Brandon Pham <span style="font-size:0.78rem;font-weight:400;text-transform:none;">(Ph&#7841;m Quang Tr&iacute; &#272;&#7913;c)</span></div>
-              <div class="officer-native">Ph&#7841;m Quang Tr&iacute; &#272;&#7913;c</div>
+              <div class="officer-name">Brandon Pham</div>
               <div class="officer-role">Social Media Manager</div>
             </div>
           </div>
@@ -349,8 +365,7 @@
             <div class="officer-photo"><img src="YUYOUNG PIC.jpg" alt="Yuyoung Kim" /></div>
             <div>
               <div class="officer-flag">&#127472;&#127479;</div>
-              <div class="officer-name">Yuyoung Kim <span style="font-size:0.82rem;font-weight:400;text-transform:none;">(&#44608;&#50976;&#50689;)</span></div>
-              <div class="officer-native">&#44608;&#50976;&#50689;</div>
+              <div class="officer-name">Yuyoung Kim</div>
               <div class="officer-role">Community Outreach Coordinator</div>
             </div>
           </div>
@@ -366,7 +381,7 @@
 
 <!-- STORIES -->
 <section class="stories" id="stories">
-  <div style="max-width:900px;margin:0 auto;">
+  <div class="stories-inner">
     <p class="section-label">Member Stories</p>
     <h2 class="section-title">Real Journeys.<br />Real Voices.</h2>
     <p class="section-sub">Every officer in this club has lived the ESOL experience. These are their stories — in their own words.</p>
@@ -377,7 +392,7 @@
         <div class="story-photo"><img src="DANIEL PIC 2.jpg" alt="Daniel Lee" /></div>
         <div class="story-text">
           <div class="story-origin">&#127472;&#127479; South Korea &rarr; Georgia, USA</div>
-          <div class="story-name">Daniel Lee (이상윤)</div>
+          <div class="story-name">Daniel Lee</div>
           <div class="story-role">President &amp; Founder</div>
           <p>In 2020, after living in Korea for years, I came back to the U.S. and had lost much of my English. Even though I should have entered 5th grade, I had to repeat 4th grade because my English level was too low.</p>
           <p>I started school in Valdosta, Georgia, where there were very few Korean students. That made me feel extremely isolated. I remember sitting in class, wanting to raise my hand, but not knowing the words to ask a simple question. Sometimes I felt invisible — other times I faced racism or teasing for not speaking English well.</p>
@@ -402,7 +417,7 @@
         <div class="story-photo"><img src="BRANDON PIC 2.jpg" alt="Brandon Pham" /></div>
         <div class="story-text">
           <div class="story-origin">&#127483;&#127475; Vietnam &rarr; Georgia, USA</div>
-          <div class="story-name">Ph&#7841;m Quang Tr&iacute; &#272;&#7913;c (Brandon Pham)</div>
+          <div class="story-name">Brandon Pham</div>
           <div class="story-role">Social Media Manager</div>
           <p>My name is Brandon, and when I came to America, I already had a foundation in English because I studied at an international school. But even with that, I realized quickly that grammar and basic communication skills weren't enough.</p>
           <p>I struggled a lot with vocabulary, slang, and cultural expressions. Because of language issues, I had difficulty choosing classes I wanted, and in conversations I often felt left out. To overcome this, I dedicated time to reading books, watching movies, and learning new words daily. Over time, this consistent effort helped me improve my accent, vocabulary, and confidence. Now, I want to share that method with other ESOL students — to show them that even small, daily efforts can lead to big results.</p>
@@ -438,7 +453,7 @@
         <div class="story-photo"><img src="YUYOUNG PIC.jpg" alt="Yuyoung Kim" /></div>
         <div class="story-text">
           <div class="story-origin">&#127472;&#127479; South Korea &rarr; Georgia, USA</div>
-          <div class="story-name">Yuyoung Kim (김유영)</div>
+          <div class="story-name">Yuyoung Kim</div>
           <div class="story-role">Community Outreach Coordinator</div>
           <p>Two years ago I left Korea for Georgia, and everything felt unfamiliar. The new culture and language were a huge challenge. But instead of waiting for things to get easier, I chose to reach out first — to friends, to clubs, to anyone willing to connect.</p>
           <p>I focused on what I could offer rather than what I lacked, and started teaching Korean language and culture in the community. That experience gave me real confidence, and my grades improved along with it. Now I want to help students who are still in that difficult early stage know that they are not alone — and that their story is just beginning.</p>
@@ -466,17 +481,22 @@
       <a href="#art7" class="const-art-link">VII &middot; Awards</a>
       <a href="#art8" class="const-art-link">VIII &middot; Finances</a>
       <a href="#art9" class="const-art-link">IX &middot; Amendments</a>
+      <a href="#art10" class="const-art-link">X &middot; Ratification</a>
     </div>
 
     <div id="art1" class="const-article">
       <div class="const-art-num">Article I</div>
       <div class="const-art-title">Name &amp; Purpose</div>
       <div class="const-section">
-        <div class="const-section-title">Mission Statement</div>
-        <p>The ESOL Scholar Society exists to empower multilingual students at Peachtree Ridge High School by providing academic support, building English communication confidence, and fostering a welcoming community where every student — regardless of language background — can thrive.</p>
+        <div class="const-section-title">Section 1 &middot; Name</div>
+        <p>The name of this organization shall be the ESOL Scholar Society (hereinafter referred to as "the Society").</p>
       </div>
       <div class="const-section">
-        <div class="const-section-title">Core Values</div>
+        <div class="const-section-title">Section 2 &middot; Mission Statement</div>
+        <p>The ESOL Scholar Society exists to empower multilingual students at Peachtree Ridge High School by providing academic support, building English communication confidence, and fostering a welcoming community where every student — regardless of language background — can thrive in and beyond the classroom.</p>
+      </div>
+      <div class="const-section">
+        <div class="const-section-title">Section 3 &middot; Core Values</div>
         <ul>
           <li><strong>Speaking First</strong> — Confidence in verbal communication is the foundation of everything we do.</li>
           <li><strong>Inclusion</strong> — Every student deserves a space where their culture and language are respected.</li>
@@ -490,16 +510,30 @@
       <div class="const-art-num">Article II</div>
       <div class="const-art-title">Membership</div>
       <div class="const-section">
-        <div class="const-section-title">Eligibility</div>
-        <p>Open to any student currently enrolled in ESOL, who has previously participated in an ESOL program, or who is a multilingual student seeking additional English language support.</p>
+        <div class="const-section-title">Section 1 &middot; Eligibility</div>
+        <p>Membership in the ESOL Scholar Society is open to any student who meets one or more of the following criteria:</p>
+        <ul>
+          <li>Currently enrolled in an ESOL course at Peachtree Ridge High School, OR</li>
+          <li>Has previously participated in the ESOL program at any school, OR</li>
+          <li>Is a multilingual student seeking additional English language support.</li>
+        </ul>
       </div>
       <div class="const-section">
-        <div class="const-section-title">Active Membership Requirements</div>
+        <div class="const-section-title">Section 2 &middot; Non-Discrimination Policy</div>
+        <p>The Society shall not discriminate based on race, national origin, religion, gender, disability, or any other characteristic. All students who wish to learn and grow are welcome.</p>
+      </div>
+      <div class="const-section">
+        <div class="const-section-title">Section 3 &middot; Active Membership Requirements</div>
+        <p>To be considered an active member in good standing, a member must:</p>
         <ul>
           <li>Attend a minimum of 75% of scheduled weekly meetings per semester.</li>
           <li>Participate in at least one unit presentation or activity per semester.</li>
-          <li>Demonstrate commitment to personal growth and respect for fellow members.</li>
+          <li>Demonstrate a commitment to personal growth and respect for fellow members.</li>
         </ul>
+      </div>
+      <div class="const-section">
+        <div class="const-section-title">Section 4 &middot; Membership Dues</div>
+        <p>There are no mandatory dues required for general membership. The Society operates on a voluntary contribution basis for special events and materials only.</p>
       </div>
     </div>
 
@@ -507,19 +541,40 @@
       <div class="const-art-num">Article III</div>
       <div class="const-art-title">Officers &amp; Leadership</div>
       <div class="const-section">
-        <div class="const-section-title">Current Officers (2025–2026)</div>
+        <div class="const-section-title">Section 1 &middot; Officer Positions</div>
+        <p>The Society shall be led by the following elected officers:</p>
         <ul>
-          <li><strong>President</strong> — Daniel Lee (이상윤)</li>
+          <li><strong>President</strong> — Daniel Lee</li>
           <li><strong>Vice President</strong> — Derin Bilsel</li>
-          <li><strong>Secretary</strong> — Carla Suarez Duran</li>
-          <li><strong>Social Media Manager</strong> — Ph&#7841;m Quang Tr&iacute; &#272;&#7913;c (Brandon Pham)</li>
-          <li><strong>Historian</strong> — Miley Rangel Aldana</li>
-          <li><strong>Community Outreach Coordinator</strong> — Yuyoung Kim (&#44608;&#50976;&#50689;)</li>
+          <li><strong>Secretary</strong> — Carla Suarez</li>
+          <li><strong>Social Media Manager</strong> — Brandon Pham</li>
+          <li><strong>Historian</strong> — Miley Rangel</li>
         </ul>
       </div>
       <div class="const-section">
-        <div class="const-section-title">Elections</div>
-        <p>Held annually in April by secret ballot. A simple majority (50% + 1) is required to elect any officer.</p>
+        <div class="const-section-title">Section 2 &middot; Officer Duties</div>
+        <p><strong>President:</strong> Presides over all meetings, sets the agenda, represents the Society to school administration and outside organizations, leads curriculum and program development.</p>
+        <p><strong>Vice President:</strong> Supports the President, assumes presidential duties in the President's absence, coordinates member engagement and recruitment.</p>
+        <p><strong>Secretary:</strong> Records and distributes meeting minutes, manages attendance records, handles official club correspondence.</p>
+        <p><strong>Social Media Manager:</strong> Manages all club social media accounts, promotes meetings and events, documents club activities for public outreach.</p>
+        <p><strong>Historian:</strong> Maintains a visual and written record of club activities, creates the end-of-year portfolio and scrapbook, documents member growth over time.</p>
+      </div>
+      <div class="const-section">
+        <div class="const-section-title">Section 3 &middot; Officer Eligibility</div>
+        <p>To be eligible for an officer position, a candidate must:</p>
+        <ul>
+          <li>Have been an active member of the Society for at least one full semester.</li>
+          <li>Maintain a passing GPA in all current courses.</li>
+          <li>Demonstrate leadership qualities and commitment to the Society's mission.</li>
+        </ul>
+      </div>
+      <div class="const-section">
+        <div class="const-section-title">Section 4 &middot; Elections</div>
+        <p>Officer elections shall be held annually in April for the following school year. Elections shall be conducted by secret ballot among active members. A simple majority (50% + 1) is required to elect any officer.</p>
+      </div>
+      <div class="const-section">
+        <div class="const-section-title">Section 5 &middot; Removal from Office</div>
+        <p>An officer may be removed from their position for cause (including failure to perform duties, conduct unbecoming of the office, or attendance below requirements) by a two-thirds (2/3) vote of active members, following a written notice and opportunity to respond.</p>
       </div>
     </div>
 
@@ -527,7 +582,20 @@
       <div class="const-art-num">Article IV</div>
       <div class="const-art-title">Meetings</div>
       <div class="const-section">
-        <p>Every <strong>Wednesday after school</strong> in <strong>Room A109</strong> for up to 90 minutes. Each meeting includes a vocabulary warm-up, main unit lesson, and speaking practice. Special meetings may be called with 48 hours notice.</p>
+        <div class="const-section-title">Section 1 &middot; Regular Meetings</div>
+        <p>The Society shall meet weekly every Wednesday after school, for a duration of up to 90 minutes. Meetings shall follow the established curriculum units as outlined in the Society's Annual Program Plan.</p>
+      </div>
+      <div class="const-section">
+        <div class="const-section-title">Section 2 &middot; Special Meetings</div>
+        <p>Special meetings may be called by the President or Faculty Sponsor with a minimum of 48 hours notice to all members.</p>
+      </div>
+      <div class="const-section">
+        <div class="const-section-title">Section 3 &middot; Quorum</div>
+        <p>A quorum for conducting official club business shall consist of at least 50% of active members plus the presiding officer.</p>
+      </div>
+      <div class="const-section">
+        <div class="const-section-title">Section 4 &middot; Meeting Format</div>
+        <p>Each meeting shall include: a brief check-in, a vocabulary or language warm-up activity, the main unit lesson or project, and a speaking practice component. All meetings shall conclude with a reflection or feedback moment.</p>
       </div>
     </div>
 
@@ -535,7 +603,14 @@
       <div class="const-art-num">Article V</div>
       <div class="const-art-title">Faculty Sponsor</div>
       <div class="const-section">
-        <p><strong>Ms. Erin Bridger</strong> — ELA Teacher &amp; ESOL Department Lead, Peachtree Ridge High School. The Faculty Sponsor attends all meetings, serves as official school liaison, and provides guidance to club officers in an advisory role without voting rights.</p>
+        <p>The Society shall have a Faculty Sponsor who is a full-time employee of Peachtree Ridge High School. The Faculty Sponsor shall:</p>
+        <ul>
+          <li>Attend and supervise all club meetings and events.</li>
+          <li>Serve as the official school liaison between the Society and administration.</li>
+          <li>Provide guidance and mentorship to club officers.</li>
+          <li>Co-sign any official club documents or funding requests.</li>
+        </ul>
+        <p>The Faculty Sponsor is an advisory role and does not hold voting rights in club elections or decisions.</p>
       </div>
     </div>
 
@@ -543,7 +618,16 @@
       <div class="const-art-num">Article VI</div>
       <div class="const-art-title">Programs &amp; Curriculum</div>
       <div class="const-section">
-        <p>The Society operates on a ten-unit annual curriculum (including two ACCESS Test Prep units). Each unit spans approximately four weeks and concludes with a member project. An End-of-Year Showcase is held annually and is open to school staff and family members.</p>
+        <div class="const-section-title">Section 1 &middot; Annual Curriculum</div>
+        <p>The Society shall operate on an eight-unit annual curriculum, with four units per semester. Each unit shall span approximately four weeks and focus on a progressive theme in English language development, with an emphasis on speaking confidence and real-world communication skills.</p>
+      </div>
+      <div class="const-section">
+        <div class="const-section-title">Section 2 &middot; Unit Showcase</div>
+        <p>Each unit shall conclude with a member presentation or showcase activity, allowing members to demonstrate growth and practice public speaking in a supportive environment.</p>
+      </div>
+      <div class="const-section">
+        <div class="const-section-title">Section 3 &middot; End-of-Year Showcase</div>
+        <p>The Society shall hold an annual End-of-Year Showcase open to school staff and, where appropriate, family members. This event shall celebrate member growth and highlight the work of the Society throughout the academic year.</p>
       </div>
     </div>
 
@@ -551,11 +635,16 @@
       <div class="const-art-num">Article VII</div>
       <div class="const-art-title">Awards &amp; Recognition</div>
       <div class="const-section">
-        <ul>
-          <li><strong>Semester Speaking MVP</strong> — Greatest growth in verbal communication confidence.</li>
-          <li><strong>Certificate of Participation</strong> — All active members at End-of-Year Showcase.</li>
-          <li><strong>Graduation Cord (Future Goal)</strong> — Pending school administration approval. Pilot year 2026–2027.</li>
-        </ul>
+        <div class="const-section-title">Section 1 &middot; Speaking MVP</div>
+        <p>At the conclusion of each semester, active members shall vote to recognize one member as the Semester Speaking MVP, awarded to the member who has demonstrated the greatest growth in verbal communication confidence.</p>
+      </div>
+      <div class="const-section">
+        <div class="const-section-title">Section 2 &middot; Certificate of Participation</div>
+        <p>All active members who fulfill the attendance and participation requirements shall receive an official Certificate of Participation at the End-of-Year Showcase.</p>
+      </div>
+      <div class="const-section">
+        <div class="const-section-title">Section 3 &middot; Graduation Cord (Future Goal)</div>
+        <p>The Society aspires to establish a graduation cord program pending school administration approval. Eligibility criteria for a graduation cord shall be established once the Society meets applicable school, state, or national recognition standards. Requirements under consideration include completion of two or more full academic years of active membership, demonstrated leadership or community service contribution, and successful completion of ESOL program benchmarks.</p>
       </div>
     </div>
 
@@ -563,7 +652,7 @@
       <div class="const-art-num">Article VIII</div>
       <div class="const-art-title">Finances</div>
       <div class="const-section">
-        <p>No mandatory membership dues. All fundraising activities must be approved by the Faculty Sponsor and school administration, managed per GCPS financial policies.</p>
+        <p>The Society shall not charge mandatory membership dues. Any fundraising activities must be approved by the Faculty Sponsor and school administration. All funds collected on behalf of the Society shall be managed in accordance with Peachtree Ridge High School and GCPS financial policies.</p>
       </div>
     </div>
 
@@ -571,7 +660,21 @@
       <div class="const-art-num">Article IX</div>
       <div class="const-art-title">Amendments</div>
       <div class="const-section">
-        <p>Amended by two-thirds (2/3) vote of active members, with written proposal submitted two weeks prior, all members notified, and Faculty Sponsor approval obtained.</p>
+        <p>This Constitution may be amended by a two-thirds (2/3) vote of active members, provided that:</p>
+        <ul>
+          <li>The proposed amendment has been submitted in writing to the Secretary at least two weeks prior to the vote.</li>
+          <li>All active members have been notified of the proposed amendment at least one week in advance.</li>
+          <li>The Faculty Sponsor has reviewed and approved the proposed amendment.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="art10" class="const-article">
+      <div class="const-art-num">Article X</div>
+      <div class="const-art-title">Ratification</div>
+      <div class="const-section">
+        <p>This Constitution shall take effect upon approval by the club officers, Faculty Sponsor, and school administration.</p>
+        <p class="const-sig">Ratified by Daniel Lee, President &middot; Derin Bilsel, Vice President &middot; the Faculty Sponsor &middot; and School Administration.</p>
       </div>
     </div>
 
@@ -583,7 +686,7 @@
   <div class="join-inner">
     <p class="section-label" style="color:var(--gold);">Get Involved</p>
     <h2 class="section-title">Your Voice Matters Here.</h2>
-    <p>Whether you're currently in ESOL, just moved to the U.S., or simply want to build your English confidence — you belong here.</p>
+    <p class="section-sub">Whether you're currently in ESOL, just moved to the U.S., or simply want to build your English confidence — you belong here.</p>
     <div class="join-details">
       <div><div class="jd-icon">&#128197;</div><div class="jd-label">When</div><div class="jd-val">Every Wednesday</div></div>
       <div><div class="jd-icon">&#128205;</div><div class="jd-label">Where</div><div class="jd-val">Room A109 &middot; PRHS</div></div>
@@ -596,7 +699,7 @@
       <a href="https://instagram.com/prhs.ess" target="_blank">&#128247; @prhs.ess</a>
       <a href="mailto:prhsesolscholarsociety@gmail.com">&#9993; prhsesolscholarsociety@gmail.com</a>
     </div>
-    <a href="#" class="btn-gold">Fill Out Interest Form &rarr;</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdvx0290iJLUBmpC9aQbakHMnlkt75RucSmB8_toJ352017QQ/viewform?usp=header" target="_blank" class="btn-gold">Fill Out Interest Form &rarr;</a>
   </div>
 </section>
 
@@ -605,7 +708,7 @@
   <p>
     &copy; 2025&ndash;2026 <a href="#">ESOL Scholar Society</a>
     <span>&middot;</span> Peachtree Ridge High School &middot; Suwanee, Georgia
-    <span>&middot;</span> Founded by <a href="#">Daniel Lee (이상윤)</a>
+    <span>&middot;</span> Founded by <a href="#">Daniel Lee</a>
   </p>
 </footer>
 
